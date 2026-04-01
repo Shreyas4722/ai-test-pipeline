@@ -1,6 +1,6 @@
 node {
     stage('Install') {
-        sh 'pip install pytest'
+        sh 'python3 -m pip install pytest'
     }
 
     stage('Test') {
