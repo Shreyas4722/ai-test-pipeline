@@ -1,9 +1,17 @@
-node {
-    stage('Install') {
-        sh 'python3 -m pip install pytest'
-    }
+pipeline {
+    agent any
 
-    stage('Test') {
-        sh 'pytest'
+    stages {
+        stage('Install') {
+            steps {
+                sh 'python3 -m pip install pytest'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'python3 -m pytest'
+            }
+        }
     }
 }
